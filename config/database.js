@@ -6,5 +6,5 @@ mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true, useCreateInde
 var db = mongoose.connection;
 
 db.on('connected', function() {
-    console.log(`Connected on MongoDB at ${db.host}:${db.port}.`);
+    console.log(`Connected on MongoDB ${db.name} at ${db.host}:${db.port}.`);
 });
