@@ -5,7 +5,7 @@ var userSchema = new Schema({
     name: String,
     email: String,
     googleId: String,
-    avatar: String
+    photo: String
 }, {
     timestamps: true
 });
