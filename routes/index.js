@@ -4,10 +4,10 @@ var passport = require('passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+    console.log(req.body);
     res.render('index', { 
-      title: 'Express',
-      user: req.user,
-      name: req.query.name
+      title: 'Video Games Due Too',
+      user: req.user
     });
 });
 
