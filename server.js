@@ -5,13 +5,14 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
 var passport = require('passport');
+var passportCtrl = require('./controllers/passport/passport')
 
 require('dotenv').config();
 require('./config/database');
 require('./config/passport');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var videogamesRouter = require('./routes/videogames');
 
 
 var app = express();
@@ -34,7 +35,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/videogames', passportCtrl.isLoggedIn, videogamesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
