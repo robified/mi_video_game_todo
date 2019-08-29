@@ -2,7 +2,7 @@
 
     <h1>Add Your Video Game</h1>
     <form action="/videogames" method="POST" autocomplete="off">
-        <input type="text" name="title" placeholder="Name of Video Game">
+        <input type="text" name="title" placeholder="Name of Video Game" required>
         <br><br>Completion Status: <select name="statusOfCompletion">['Not Started', 'In Progress', 'Completed']
             <option value="Not Started">Not Started</option>
             <option value="In Progress">In Progress</option>
@@ -11,4 +11,5 @@
         <br><br>
         <button type="submit">Add Video Game</button>
     </form>
+
 <%- include('../partials/footer') %>
