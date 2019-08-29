@@ -3,14 +3,21 @@
     <% if (user) {%><h1>Hello, <%= user.name %>!</h1>
     <img src="<%= user.photo %>" alt="<%= user.name %>'s Profile Pic" width="100">
     <% } %>
-
-    <h1>Here are a list of your video games!</h1>
-    <ul>
-        <% user.videogames.forEach(function(vg, idx) { %>
-            <li><%= vg.title %> - <%= vg.statusOfCompletion %></li>
+    
+    <% if (videogames.length) { %>
+    
+    <h2>Here are a list of your video games!</h2>
+        <ul>
+        <% videogames.forEach(function(vg) { %>
+            <li><a href="/videogames/<%= vg._id %>"><%= vg.title %></a> - <%= vg.statusOfCompletion %></li>
         <% }) %>
-            <li>Game Two - In progress</li>
-            <li>Game Three - Not Started</li>
         </ul>
+
+    <% } else { %>
+
+        <h2>You have no video games. <a href="/videogames/new">Click here</a> to add a video game!</h2>
+    
+    <% }; %>
+    
 
 <%- include('../partials/footer') %>
