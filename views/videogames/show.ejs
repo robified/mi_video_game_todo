@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+
+    <h1>Name of Game: <%= videogame.title %></h1>
+    <h3>Status of Completion: <%= videogame.statusOfCompletion %></h3>
+
+    <form action="" method="">
+    <button type="submit">Add A Note</button></form>
+    
+    <br>
+    
+    <a href="/videogames/<%= videogame._idx %>/edit">Edit Game</a>
+    
+    <br><br>
+    
+    <form action="/videogames/<%= videogame._idx %>?_method=DELETE" method="POST">
+    <button type="submit">Delete Game</button></form>
+
+<%- include('../partials/footer') %>
