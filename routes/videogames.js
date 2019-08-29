@@ -7,11 +7,8 @@ router.get('/new', videogamesCtrl.new);
 router.get('/:id', videogamesCtrl.show);
 router.get('/:id/edit', videogamesCtrl.edit);
 
-
 router.post('/', videogamesCtrl.create);
+router.put('/:id', videogamesCtrl.update);
 router.delete('/:id', videogamesCtrl.delete);
-
-
-router.put('/:id');
 
 module.exports = router;
