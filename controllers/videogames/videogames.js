@@ -7,12 +7,19 @@ module.exports = {
     create,
     show,
     delete: deleteVideogame,
-    edit
+    edit: editPage,
+    update
 };
 
-function edit(req, res, next) {
+function update(req, res, next) {
+    Videogame.findByIdAndUpdate(req.params.id, req.body, function(err, videogame) {
+        res.redirect(`/videogames/${req.params.id}`);
+    });
+};
+
+function editPage(req, res, next) {
     Videogame.findById(req.params.id, function(err, videogame) {
-        res.render('videogames/show', {
+        res.render('videogames/edit', {
             videogame,
             user: req.user
         });
@@ -20,17 +27,13 @@ function edit(req, res, next) {
 };
 
 function deleteVideogame(req, res, next) {
-    Videogame.findById(req.params.id, function(err, videogame) {
-        res.redirect('/videogames', {
-            videogame,
-            user: req.user
-        });
+    Videogame.findByIdAndDelete(req.params.id, function(err, videogame) {
+        res.redirect('/videogames');
     });
 };
 
 function show(req, res, next) {
     Videogame.findById(req.params.id, function(err, videogame) {
-        // console.log(user, videogame);
         res.render('videogames/show', {
             videogame,
             user: req.user
