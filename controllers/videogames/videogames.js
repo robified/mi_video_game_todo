@@ -1,4 +1,5 @@
 var Videogame = require('../../models/videogame');
+var Comment = require('../../models/comment');
 
 module.exports = {
     index,
@@ -31,14 +32,17 @@ function deleteVideogame(req, res, next) {
     });
 };
 
+
 function show(req, res, next) {
     Videogame.findById(req.params.id, function(err, videogame) {
-        res.render('videogames/show', {
-            videogame,
-            user: req.user,
-            
+        Comment.find( { videogame: req.params.id, user: req.user }, function(err, comments) {
+            res.render('videogames/show', {
+                videogame,
+                user: req.user,
+                comments
+            });
         });
-    });
+    })
 };
 
 function create(req, res, next) {
@@ -58,7 +62,6 @@ function newVideogamePage(req, res, next) {
 
 function index(req, res, next) {
     Videogame.find({ user: req.user._id }, function(err, videogames) {
-        // console.log(user, videogame);
         res.render('videogames/index', {
             user: req.user,
             videogames
