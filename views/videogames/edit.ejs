@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+
+    <h1>Edit Your Video Game</h1>
+    <form action="/videogames/<%= videogame._id %>?_method=PUT" method="POST" autocomplete="off">
+        
+        Title of Videogame: <input type="text" name="title" placeholder="<%= videogame.title %>" required>
+        
+        <br><br>
+        
+        Completion Status: 
+        <select name="statusOfCompletion">['Not Started', 'In Progress', 'Completed']
+        <option <%= videogame.statusOfCompletion==="Not Started" ? 'selected' : '' %> value="Not Started">Not Started</option>
+        <option <%= videogame.statusOfCompletion==="In Progress" ? 'selected' : '' %> value="In Progress">In Progress</option>
+        <option <%= videogame.statusOfCompletion==="Completed" ? 'selected' : '' %> value="Completed">Completed</option>
+        </select>
+        
+        <br><br>
+        
+        <button type="submit">Edit Video Game</button>
+
+    </form>
+
+<%- include('../partials/footer') %>
