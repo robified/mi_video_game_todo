@@ -7,6 +7,10 @@ a {
   color: #00B7FF;
 }
 
+form {
+  display: inline;
+}
+
 #comet {
   font-size: 5vmin;
 }
