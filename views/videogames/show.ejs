@@ -8,11 +8,11 @@
     
     <br>
     
-    <a href="/videogames/<%= videogame._idx %>/edit">Edit Game</a>
+    <a href="/videogames/<%= videogame._id %>/edit">Edit Game</a>
     
     <br><br>
     
-    <form action="/videogames/<%= videogame._idx %>?_method=DELETE" method="POST">
+    <form action="/videogames/<%= videogame._id %>?_method=DELETE" method="POST">
     <button type="submit">Delete Game</button></form>
 
 <%- include('../partials/footer') %>
