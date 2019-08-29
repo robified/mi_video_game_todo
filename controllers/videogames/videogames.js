@@ -1,5 +1,4 @@
 var Videogame = require('../../models/videogame');
-var User = require('../../models/user');
 
 module.exports = {
     index,
@@ -36,19 +35,13 @@ function show(req, res, next) {
     Videogame.findById(req.params.id, function(err, videogame) {
         res.render('videogames/show', {
             videogame,
-            user: req.user
+            user: req.user,
+            
         });
     });
 };
 
 function create(req, res, next) {
-    // console.log(req.user, req.body);
-    /* *
-     TODO : get the user from mongo
-     then put the new Videogame into the user
-     either use poplulate or you can push it into the videogames array
-     you always need to save the user when you are done 
-    */ 
     req.body.user = req.user._id;
     req.body.status = 'Not Started';
     var videogame = new Videogame(req.body);
