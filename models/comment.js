@@ -7,9 +7,13 @@ var videogameCommentsSchema = new Schema({
     videogame: {
         type: Schema.Types.ObjectId,
         ref: 'Videogame'
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
     }
 }, {
     timestamps: true
 });
 
-module.exports = mongoose.model('VideogameComments', videogameCommentsSchema);
+module.exports = mongoose.model('Comment', videogameCommentsSchema);
