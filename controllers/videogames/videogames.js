@@ -20,21 +20,22 @@ function edit(req, res, next) {
 };
 
 function deleteVideogame(req, res, next) {
-    console.log(req.user.videogames[req.params.id]);
-        user.videogames[req.params.id].remove();
-        user.save(function(err) {
-            res.redirect('/videogames');
+    Videogame.findById(req.params.id, function(err, videogame) {
+        res.redirect('/videogames', {
+            videogame,
+            user: req.user
         });
+    });
 };
 
 function show(req, res, next) {
     Videogame.findById(req.params.id, function(err, videogame) {
+        // console.log(user, videogame);
         res.render('videogames/show', {
             videogame,
             user: req.user
         });
     });
-    // console.log(user.videogames);
 };
 
 function create(req, res, next) {
@@ -54,15 +55,13 @@ function create(req, res, next) {
 };
 
 function newVideogamePage(req, res, next) {
-    let userId = req.user._id
     res.render('videogames/new', {
-        user: userId
+        user: req.user._id
     });
 };
 
 function index(req, res, next) {
-    let userId = req.user._id
-    Videogame.find({ user: userId }, function(err, videogames) {
+    Videogame.find({ user: req.user._id }, function(err, videogames) {
         // console.log(user, videogame);
         res.render('videogames/index', {
             user: req.user,
