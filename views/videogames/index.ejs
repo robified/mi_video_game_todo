@@ -1,23 +1,29 @@
 <%- include('../partials/header') %>
     
-    <% if (user) {%><h1>Hello, <%= user.name %>!</h1>
-    <img src="<%= user.photo %>" alt="<%= user.name %>'s Profile Pic" width="100">
-    <% } %>
+    <div class="index">
+        <% if (user) {%>
+            <div class="welcome">
+                <img src="<%= user.photo %>" alt="<%= user.name %>'s Profile Pic" width="100">
+                <h1>Hello, <%= user.name %>!</h1>
+            </div>
+        <% } %>
+        
+        <% if (videogames.length) { %>
+        
+        <h2>Here are a list of your video games!</h2>
+            <ul>
+            <% videogames.forEach(function(vg) { %>
+                <li><a href="/videogames/<%= vg._id %>"><%= vg.title %></a> - <%= vg.statusOfCompletion %></li>
+            <% }) %>
+            </ul>
     
-    <% if (videogames.length) { %>
+        <% } else { %>
     
-    <h2>Here are a list of your video games!</h2>
-        <ul>
-        <% videogames.forEach(function(vg) { %>
-            <li><a href="/videogames/<%= vg._id %>"><%= vg.title %></a> - <%= vg.statusOfCompletion %></li>
-        <% }) %>
-        </ul>
-
-    <% } else { %>
-
         <h2>You have no video games. <a href="/videogames/new">Click here</a> to add a video game!</h2>
+        
+        <% }; %>
+    </div>
     
-    <% }; %>
     
 
 <%- include('../partials/footer') %>

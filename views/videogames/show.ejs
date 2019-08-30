@@ -1,5 +1,7 @@
 <%- include('../partials/header') %>
 
+<div class="index">
+
     <h1>Name of Game: <%= videogame.title %></h1>
     <h3>Status of Completion: <%= videogame.statusOfCompletion %></h3>
 
@@ -17,11 +19,13 @@
         <% } else { %>
         <h3>You have no comments for this game.</h3>
         <% } %>
-    
-    <form action="/videogames/<%= videogame._id %>/edit" method="GET">
-    <button type="submit">Edit Game</button></form>
+        <br><br>
+    <div class="edit">
+        <form action="/videogames/<%= videogame._id %>/edit" method="GET">
+        <button type="submit">Edit Game</button></form>
+        <form action="/videogames/<%= videogame._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete Game</button></form>
+    </div>
 
-    <form action="/videogames/<%= videogame._id %>?_method=DELETE" method="POST">
-    <button type="submit">Delete Game</button></form>
-    
+</div>
 <%- include('../partials/footer') %>

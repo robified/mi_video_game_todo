@@ -11,14 +11,10 @@
 
 <body>
     <nav>
-        <ul>
-            <li><a href="/videogames/">Home</a></li>
-            <li><a href="/videogames/new">Add a Game</a></li>
-            <li><% if (user) { %>
-                <a href="/logout">Log Out</a>
-                <% } else { %>
-                  <a href="/auth/google">Login with Google</a>
+        <div><a href="/videogames/">Home</a></div>
+        <div><a href="/videogames/new">Add a Game</a></div>
+        <div><% if (user) { %><a href="/logout">Log Out</a></div>
+            <% } else { %>
+        <div><a href="/auth/google">Login with Google</a></div>
             <% } %>
-                </li>
-        </ul>
     </nav>

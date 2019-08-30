@@ -1,10 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  padding: 50px;
+  height: 100vh;
+  margin: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.6), 
+    rgba(0, 0, 0, 0.9)
+    ), url("/images/bg.png") no-repeat center center fixed;
+  background-size: cover;
+  background-color: #3D4152;
+  color: #d5fddb;
+  font-size: 20px;
+}
+
+footer {
+  display: grid;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 a {
-  color: #00B7FF;
+  color: #c6cdff;
+}
+
+nav {
+  display: flex;
+  height: 50px;
+  background-color: #1d1e25;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 20px;
+}
+
+nav > div {
+  font-size: 20px;
+  margin: 10px 15px;
+}
+
+.index {
+  display: grid;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 5px;
 }
 
 form {
@@ -13,4 +65,5 @@ form {
 
 #comet {
   font-size: 5vmin;
+  text-decoration: none;
 }

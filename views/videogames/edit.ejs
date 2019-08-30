@@ -1,5 +1,7 @@
 <%- include('../partials/header') %>
 
+<div class="index">
+
     <h1>Edit Your Video Game</h1>
     <form action="/videogames/<%= videogame._id %>?_method=PUT" method="POST" autocomplete="off">
         
@@ -20,4 +22,5 @@
 
     </form>
 
+</div>
 <%- include('../partials/footer') %>
