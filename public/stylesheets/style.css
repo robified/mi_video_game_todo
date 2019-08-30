@@ -51,13 +51,14 @@ nav > div {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+  text-align: center;
 }
 
 .index {
   display: grid;
   flex-direction: column;
   justify-content: space-around;
+  text-align: center;
   margin: 10px;
 }
 
