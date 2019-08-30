@@ -10,7 +10,7 @@
         
         <% if (videogames.length) { %>
         
-        <h2>Here are a list of your video games!</h2>
+        <h2>Here is a list of your video games!</h2>
             <ul>
             <% videogames.forEach(function(vg) { %>
                 <li><a href="/videogames/<%= vg._id %>"><%= vg.title %></a> - <%= vg.statusOfCompletion %></li>
