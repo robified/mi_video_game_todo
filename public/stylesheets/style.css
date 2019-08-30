@@ -80,3 +80,12 @@ form {
   font-size: 5vmin;
   text-decoration: none;
 }
+
+.cometcoming {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
