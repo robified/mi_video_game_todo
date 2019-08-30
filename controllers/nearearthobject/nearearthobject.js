@@ -10,9 +10,8 @@ function index(req, res, next) {
     request(rootURL + process.env.COMET, function(err, response, comet) {
         var cometData = JSON.parse(comet);
         var asteroids = cometData.near_earth_objects;
-        var firstDateComet = '2019-09-05';
-        var theDay = asteroids[firstDateComet][0].nasa_jpl_url + ';old=0;orb=1;cov=0;log=0;cad=0#orb';
-        console.log(firstDateComet);
+        var theDay = asteroids['2019-09-05'][0].nasa_jpl_url + ';old=0;orb=1;cov=0;log=0;cad=0#orb';
+        // console.log(firstDateComet);
         console.log(theDay);
         res.render('nearearthobject/index', {
             theDay,
