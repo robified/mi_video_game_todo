@@ -2,17 +2,18 @@
 - The purpose of this web application is to be able to track a list of your video games, make some comments about your adventures, and follow the progress of your games.
 
 ## Wireframes
-<img src="https://i.imgur.com/rYcaDPw.png" width="150">
-<img src="https://i.imgur.com/zkagBXP.jpg" width="100">
-<img src="https://i.imgur.com/1Kv6AtK.jpg" width="100">
-<img src="https://i.imgur.com/h3SEx3b.jpg" width="100">
-<img src="https://i.imgur.com/hkUtVgb.jpg" width="100">
+<img src="https://i.imgur.com/rYcaDPw.png" width="250">
+
+<img src="https://i.imgur.com/zkagBXP.jpg" width="300">
+<img src="https://i.imgur.com/1Kv6AtK.jpg" width="300">
+<img src="https://i.imgur.com/h3SEx3b.jpg" width="300">
+<img src="https://i.imgur.com/hkUtVgb.jpg" width="300">
 
 ## Screenshots
-<img src="https://i.imgur.com/1VaCt5W.jpg" width="100">
-<img src="https://i.imgur.com/LA7n1LP.jpg" width="100">
-<img src="https://i.imgur.com/B6PMWC3.jpg" width="100">
-<img src="https://i.imgur.com/vE7LAjv.jpg" width="100">
+<img src="https://i.imgur.com/1VaCt5W.jpg" width="300">
+<img src="https://i.imgur.com/LA7n1LP.jpg" width="300">
+<img src="https://i.imgur.com/B6PMWC3.jpg" width="300">
+<img src="https://i.imgur.com/vE7LAjv.jpg" width="300">
 
 ## Technologies Used
 - HTML
