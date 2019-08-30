@@ -15,6 +15,7 @@ require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var videogamesRouter = require('./routes/videogames');
+var nearearthobjectRouter = require('./routes/nearearthobject');
 
 var app = express();
 
@@ -39,6 +40,7 @@ app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/videogames', passportCtrl.isLoggedIn, videogamesRouter);
+app.use('/nearearthobject', passportCtrl.isLoggedIn, nearearthobjectRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
