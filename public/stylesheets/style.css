@@ -45,6 +45,15 @@ nav > div {
   margin: 10px 15px;
 }
 
+.landing {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
 .index {
   display: grid;
   flex-direction: column;
