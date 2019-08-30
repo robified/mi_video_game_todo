@@ -28,7 +28,9 @@ function editPage(req, res, next) {
 
 function deleteVideogame(req, res, next) {
     Videogame.findByIdAndDelete(req.params.id, function(err, videogame) {
-        res.redirect('/videogames');
+        Comment.deleteOne( { videogame: req.params.id, user: req.user }, function(err, comments) {
+            res.redirect('/videogames');
+        });
     });
 };
 
