@@ -12,11 +12,11 @@
     "dotenv": "^8.1.0",
     "ejs": "~3.1.10",
     "express": "~4.21.2",
-    "express-session": "^1.18.1",
+    "express-session": "^1.18.2",
     "http-errors": "~1.6.3",
     "method-override": "^3.0.0",
     "mongoose": "^8.9.5",
-    "morgan": "~1.9.1",
+    "morgan": "~1.10.1",
     "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0",
     "tough-cookie": ">=4.1.3"
